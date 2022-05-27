@@ -28,7 +28,7 @@ function fetchForAll1() {
         Accept: "text/plain, */*",
         "Content-Type": "text/plain",
       },
-      body: ('{ a: 7, str: "Some string teste" }') ,
+      body: '{ a: 7, str: "Some string teste" }' ,
     })
       .then((res) => res.json())
       .then((res) => console.log(res))
