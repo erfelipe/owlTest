@@ -30,7 +30,7 @@ function fetchForAll1() {
       },
       body: '{ a: 7, str: "Some string teste" }' ,
     })
-      .then((res) => res.json())
+      .then((res) => res.text())
       .then((res) => console.log(res))
       .catch((res) => console.log(res));
   }
