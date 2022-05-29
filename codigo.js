@@ -51,7 +51,7 @@ async function fetchForAll4() {
   // *starred options in comments are default values
   const response = await fetch(getUrl(), {
     method: "POST", // *GET, POST, PUT, DELETE, etc.
-    mode: "same-origin", // no-cors, *cors, same-origin
+    mode: "cors", // no-cors, *cors, same-origin
     cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
     credentials: "same-origin", // include, *same-origin, omit
     headers: {
