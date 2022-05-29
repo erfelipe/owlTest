@@ -62,7 +62,7 @@ async function fetchForAll4() {
     referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
     body: "( dados, etc.. )", // body data type must match "Content-Type" header
   });
-  return response.text(); // parses JSON response into native JavaScript objects
+  return response; // parses JSON response into native JavaScript objects
 }
 
 function fetchForAll41() {
