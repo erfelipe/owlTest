@@ -13,6 +13,21 @@
     <button type="button" onclick="fetchForAll2()">fetch 2</button>
     <button type="button" onclick="fetchForAll3()">fetch 3</button>
     <button type="button" onclick="fetchForAll41()">fetch 41</button>
+    <br/>
+    <textarea name="estrutura" id="estrutura" rows="9" cols="90"">
+      {
+	    "id": "https://onto4alleditor.com/pt/idDoProjeto",
+	    "outformat": "OWL",
+	    "ontoclass": ["Pessoa", "Homem", "Mulher"],
+	    "ontoaxioms": ["Homem subClassOf (Pessoa)", "Mulher subClassOf (Pessoa)"],
+	    "ontoproperties": ["hasPart"]
+	    }
+    </textarea>
+    <br/>
+    <div id="resp">
+      Resp: 
+    </div>
+
 
     <pre>
         <code>

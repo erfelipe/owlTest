@@ -7,6 +7,16 @@ function getUrl() {
   return url;
 }
 
+function getBody() {
+  let bd = document.getElementById("estrutura").value;
+  return bd;
+}
+
+function setResp(resposta) {
+  let resp = document.getElementById("resp");
+  resp.innerText = "Resp: " + resposta;
+}
+
 function fetchForAll1() {
   (async () => {
     const rawResponse = await fetch(getUrl(), {
@@ -15,10 +25,11 @@ function fetchForAll1() {
         Accept: "text/plain, */*",
         "Content-Type": "text/plain",
       },
-      body: '({ a: 1, b: "Textual content" })',
+      body: getBody(),
     });
     const content = await rawResponse.text();
     console.log(content);
+    setResp(content);
   })();
 }
 
@@ -29,7 +40,7 @@ function fetchForAll2() {
       Accept: "text/plain, */*",
       "Content-Type": "text/plain",
     },
-    body: '{ a: 7, str: "Some string teste" }',
+    body: getBody(),
   })
     .then((res) => res.text())
     .then((res) => console.log(res))
@@ -40,7 +51,7 @@ function fetchForAll3() {
   fetch(getUrl(), {
     method: "POST",
     headers: { "Content-Type": "text/plain" },
-    body: '{ a: 7, str: "Some string teste" }',
+    body: getBody(),
   })
     .then((response) => response.text())
     .then((text) => console.log(text))
@@ -60,7 +71,7 @@ async function fetchForAll4() {
     },
     redirect: "follow", // manual, *follow, error
     referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
-    body: "( dados, etc.. )", // body data type must match "Content-Type" header
+    body: getBody(), // body data type must match "Content-Type" header
   });
   return response; // parses JSON response into native JavaScript objects
 }
