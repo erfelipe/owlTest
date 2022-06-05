@@ -14,7 +14,7 @@ function getBody() {
 
 function setResp(resposta) {
   let resp = document.getElementById("resp");
-  resp.innerText = "Resp: " + resposta;
+  resp.innerText = "Resp do fetch1 (demais fetchs no console): " + resposta;
 }
 
 function fetchForAll1() {
@@ -82,3 +82,21 @@ function fetchForAll41() {
     .then((text) => console.log(text))
     .catch((erro) => console.log(erro));
 }
+
+fetch("https://onto4all.repesq.ufjf.br/owlapi/webapi/ontology/valid", {
+  method: "POST",
+  headers: {
+    Accept: "text/plain, */*",
+    "Content-Type": "text/plain",
+  },
+  body: JSON.stringify({
+    id:
+      "https://onto4alleditor.com/en/ontologies/" +
+      document.getElementById("id").value,
+    outformat: "OWL", 
+    ontoclass: getElementsNames(),
+    // split the axioms after each ';' and then remove empty/whitespace strings from the array
+    ontoaxioms: userInput.value.split(";").filter((e) => String(e).trim()),
+    ontoproperties: "",
+  }),
+});
