@@ -83,20 +83,4 @@ function fetchForAll41() {
     .catch((erro) => console.log(erro));
 }
 
-fetch("https://onto4all.repesq.ufjf.br/owlapi/webapi/ontology/valid", {
-  method: "POST",
-  headers: {
-    Accept: "text/plain, */*",
-    "Content-Type": "text/plain",
-  },
-  body: JSON.stringify({
-    id:
-      "https://onto4alleditor.com/en/ontologies/" +
-      document.getElementById("id").value,
-    outformat: "OWL", 
-    ontoclass: getElementsNames(),
-    // split the axioms after each ';' and then remove empty/whitespace strings from the array
-    ontoaxioms: userInput.value.split(";").filter((e) => String(e).trim()),
-    ontoproperties: "",
-  }),
-});
+
